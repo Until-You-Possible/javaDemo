@@ -1,6 +1,7 @@
 package com.example.demo.core;
 
 
+import com.example.demo.core.configuration.ExceptionCodeConfiguration;
 import com.example.demo.exception.http.HttpException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalHttpException {
 
 
+    private  ExceptionCodeConfiguration exceptionCodeConfiguration;
+    public GlobalHttpException(ExceptionCodeConfiguration exceptionCodeConfiguration) {
+        this.exceptionCodeConfiguration = exceptionCodeConfiguration;
+    }
+
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public UnifyResponse handleException(HttpServletRequest httpServletRequest, Exception e) {
@@ -30,7 +36,8 @@ public class GlobalHttpException {
         // 设置自定义的报错信息 从配置中读取相关信息
         String requestUrl = httpServletRequest.getRequestURI();
         String method =  httpServletRequest.getMethod();
-        UnifyResponse unifyResponse = new UnifyResponse(httpException.getCode(), "this is http exception", method + "" + requestUrl);
+        UnifyResponse unifyResponse = new UnifyResponse(httpException.getCode(),
+                exceptionCodeConfiguration.getMessage(httpException.getCode()), method + "" + requestUrl);
         HttpHeaders httpHeaders =  new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpStatus httpStatus = HttpStatus.resolve(httpException.getHttpStatusCode());
