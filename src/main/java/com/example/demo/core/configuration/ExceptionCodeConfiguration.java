@@ -17,8 +17,8 @@ public class ExceptionCodeConfiguration {
         return codes;
     }
 
-    // map的方式和类对象对应
     private final Map<Integer, String>  codes = new HashMap<>();
+
     public String getMessage(int code) {
         return  codes.get(code);
     }
