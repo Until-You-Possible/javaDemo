@@ -27,9 +27,34 @@ CheckedException，如 I/O 错误导致的 IOException、SQLException。 Runtime
 制程序去捕获此类异常，即会出现要求你把这段可能出现异常的程序进行 try catch，该类异常一
 般包括几个方面：
 
+######  常见的异常
+1: 运行时异常, NullPointerException, ArrayIndexOutOfBoundException, ClassCastException 
+2: 编译时异常 (编译时异常必须进行处理否则无法运行), IOException (FileNotFoundException),ClassNotFoundException
 
-###### 异常处理方式
+###### 异常的抓抛模型原理
 
-遇到问题不进行具体处理，而是继续抛给调用者 （throw,throws）
+- 异常的抛出
+- 异常的抓取
 
-抛出异常有三种形式，一是 throw,一个 throws，还有一种系统自动抛异常
+1：如果程序在运行过程中执行某段代码时发生了异常，那么系统（JVM）将会根据异常的类型，在异常代码处创建对应的异常类型的对象并抛出，抛出给程序的调用者。
+一旦抛出对象以后,其后的代码不再运行,程序终止.
+异常的抛出分为：① 系统向外抛出异常 ② 手动向外抛出异常（throw）
+
+2：异常的抓取可以理解为异常的处理方式, 取有 try-catch-finally 和 throws 两种方式（详情见异常的处理部分）
+
+###### throws + 异常类型
+
+
+1: throws 一般用于方法中可能存在异常时, 需要将异常情况向方法之上的层级抛出, 由抛出方法的上一级来解决这个问题, 如果方法的上一级无法解决的会就会再将异常向上抛出, 
+最终会抛给main方法. 这样一来main方法中调用了这个方法的时候,就需要解决这个可能出现的异常
+2: throws + 异常类型写在方法的声明处.指明此方法执行时,可能会抛出的异常类型.
+   一旦方法体执行时,出现异常，仍会在异常代码处生成一个异常类的对象，此对象满足throws后异常类型时，就会被抛出。
+   异常代码的后续的代码，就不再执行
+3: try-catch-fianlly:真正的将异常给处理掉了。throws的方式只是将异常抛给了方法的调用者，并没有真正将异常处理掉.
+
+
+###### 自定义异常类
+
+1: 继承现有的异常结构：RuntimeExceptiona（不用处理）、Exception（需要处理）
+2: 提供全局常量：serialVersionUID
+3: 提供重载的构造器
