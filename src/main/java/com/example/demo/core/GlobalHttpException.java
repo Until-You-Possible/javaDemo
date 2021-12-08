@@ -7,10 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -19,7 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 @RestControllerAdvice
-public class GlobalHttpException extends ResponseEntityExceptionHandler {
+@RestController
+public class GlobalHttpException {
 
 
     private  ExceptionCodeConfiguration exceptionCodeConfiguration;
@@ -35,6 +33,10 @@ public class GlobalHttpException extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public UnifyResponse handleException(HttpServletRequest httpServletRequest, Exception e) {
+        String requestUrl = httpServletRequest.getRequestURI();
+        if (e instanceof NoHandlerFoundException) {
+            return new UnifyResponse(404, " Not Found URL",  requestUrl);
+        }
         String url = httpServletRequest.getRequestURI();
         String method = httpServletRequest.getMethod();
         return new UnifyResponse(9999, "serve error",  method + "" + url);
@@ -56,13 +58,13 @@ public class GlobalHttpException extends ResponseEntityExceptionHandler {
         }
         return new ResponseEntity<>(unifyResponse, httpHeaders, httpStatus);
     }
-    @ExceptionHandler(NoHandlerFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public HashMap<String, String> handleNoHandlerFound(NoHandlerFoundException e, WebRequest request) {
-        HashMap<String, String> response = new HashMap<>();
-        response.put("status", "fail");
-        response.put("message", e.getLocalizedMessage());
-        return response;
-    }
+//    @ExceptionHandler(NoHandlerFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public HashMap<String, String> handleNoHandlerFound(NoHandlerFoundException e, WebRequest request) {
+//        HashMap<String, String> response = new HashMap<>();
+//        response.put("status", "fail");
+//        response.put("message", e.getLocalizedMessage());
+//        return response;
+//    }
 
 }
