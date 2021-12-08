@@ -50,11 +50,9 @@ CheckedException，如 I/O 错误导致的 IOException、SQLException。 Runtime
 2: throws + 异常类型写在方法的声明处.指明此方法执行时,可能会抛出的异常类型.
    一旦方法体执行时,出现异常，仍会在异常代码处生成一个异常类的对象，此对象满足throws后异常类型时，就会被抛出。
    异常代码的后续的代码，就不再执行
-3: try-catch-fianlly:真正的将异常给处理掉了。throws的方式只是将异常抛给了方法的调用者，并没有真正将异常处理掉.
+3: try-catch-finally:真正的将异常给处理掉了。throws的方式只是将异常抛给了方法的调用者，并没有真正将异常处理掉.
 
 
 ###### 自定义异常类
 
-1: 继承现有的异常结构：RuntimeExceptiona（不用处理）、Exception（需要处理）
-2: 提供全局常量：serialVersionUID
-3: 提供重载的构造器
+继承现有的异常结构：RuntimeException（不用处理）、Exception（需要处理）
