@@ -36,7 +36,7 @@ The implementation of JVM is also actively released by other companies besides S
 
 ```
 
-![img.png](img.png)
+![img.png](img/img.png)
 
 
 **JDK**
@@ -58,5 +58,5 @@ The JDK contains a private Java Virtual Machine (JVM) and a few other resources 
 a compiler (javac), an archiver (jar), a documentation generator (Javadoc), 
 etc. to complete the development of a Java Application.
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
