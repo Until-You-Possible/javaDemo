@@ -114,7 +114,65 @@ However, the java.util package is a weakly cohesive package because it has unrel
 
 ```
 
+**Association**
 
+```text
+
+Association represents the relationship between the objects. Here, one object can be associated with one object or many objects. 
+There can be four types of association between the objects:
+
+```
+- One to One
+- One to Many
+- Many to One, and
+- Many to Many
+
+```text
+
+Let's understand the relationship with real-time examples. For example, One country can have one prime minister (one to one),
+and a prime minister can have many ministers (one to many). Also, many MP's can have one prime minister (many to one), 
+and many ministers can have many departments (many to many).
+Association can be unidirectional or bidirectional.
+
+```
+
+**Aggregation**
+
+```text
+
+Aggregation is a way to achieve Association. Aggregation represents the relationship where one object contains other objects as a part of its state. 
+It represents the weak relationship between objects. It is also termed as a has-a relationship in Java. Like, inheritance represents the is-a relationship. 
+It is another way to reuse objects
+
+```
+
+**Composition**
+
+```text
+
+The composition is also a way to achieve Association. The composition represents the relationship where one object contains other objects as a part of its state. 
+There is a strong relationship between the containing object and the dependent object. It is the state where containing objects do not have an independent existence. 
+If you delete the parent object, all the child objects will be deleted automatically.
+
+```
+
+***Advantage of OOPs over Procedure-oriented programming language***
+
+```text
+1) OOPs makes development and maintenance easier, whereas, in a procedure-oriented programming language, 
+it is not easy to manage if code grows as project size increases.
+
+2) OOPs provides data hiding, whereas, in a procedure-oriented programming language, global data can be accessed from anywhere
+
+```
+
+***What is the difference between an object-oriented programming language and object-based programming language?***
+
+```text
+
+Object-based programming language follows all the features of OOPs except Inheritance. JavaScript and VBScript are examples of object-based programming languages.
+
+```
 
 
 
