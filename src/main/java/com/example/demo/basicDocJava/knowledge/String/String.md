@@ -24,7 +24,7 @@ the java.lang.String class implements Serializable, comparable and CharSequence 
 
 ```
 
-![img.png](img.png)
+![img.png](../img/img_sep27_1.png)
 
 **CharSequence interfaces**
 
@@ -35,7 +35,7 @@ It means, we can create strings in Java by using these three classes.
 
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](../img/img_sep27_3.png)
 
 ```text
 
@@ -80,7 +80,7 @@ Stirng name2="arthur"; // it doesn't create a new instance
 
 ```
 
-![img_3.png](img_3.png)
+![img_3.png](../img/img_sep27_4.png)
 
 ```text
 
@@ -103,6 +103,53 @@ String s=new String("Welcome");
 
 ```text
 
-in such case, JVM will create a new string in normal(non-pool) heap memory. and the literal "welcome" 
+in such case, JVM will create a new string in normal(non-pool) heap memory. and the literal "welcome" will be placed in the string 
+constant pool, the variable's will refer to the object in a heap(non-pool)
 
 ```
+
+The java.lang.String class provides many useful methods to perform operations on sequence of char values.
+
+![img_4.png](../img/img_sep27_5.png)
+
+![img_5.png](../img/img_sep27_6.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
