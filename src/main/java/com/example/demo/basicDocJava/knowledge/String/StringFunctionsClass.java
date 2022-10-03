@@ -38,15 +38,15 @@ public class StringFunctionsClass {
     public void getConcat() {
 
     }
-    public String concat(String str) {
-        int otherLen = str.length();
-        if (otherLen == 0) {
-            return this;
-        }
-        int len = value.length;
-        char[] buf = Arrays.copyOf(value, len + otherLen);
-        str.getChars(buf, len);
-        return new String(buf, true);
-    }
+//    public String concat(String str) {
+//        int otherLen = str.length();
+//        if (otherLen == 0) {
+//            return this;
+//        }
+//        int len = value.length;
+//        char[] buf = Arrays.copyOf(value, len + otherLen);
+//        str.getChars(buf, len);
+//        return new String(buf, true);
+//    }
 
 }
