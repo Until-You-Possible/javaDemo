@@ -23,11 +23,46 @@ The java.util.regex package provides following classes and interfaces for regula
 
 It implements the MatchResult interface. It is a regex engine which is used to perform match operations on a character sequence.
 
-![img.png](img.png)
+![img.png](../img/img_oct08.png)
 
 **Pattern class**
 
 It is the compiled version of a regular expression. It is used to define a pattern for the regex engine.
 
-![img_1.png](img_1.png)
+![img_1.png](../img/img_1_oct08.png)
+
+**Regex Character classes**
+
+![img_2.png](../img/img_2_oct08.png)
+
+
+**Regex Quantifiers**
+
+The quantifier specify the number of occurrences of character
+
+![img_3.png](../img/img_3_oct08.png)
+
+
+**Regex Metacharacters**
+
+the regular expression metacharacters work as shortcodes
+
+![img_4.png](../img/img_4_oct08.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
