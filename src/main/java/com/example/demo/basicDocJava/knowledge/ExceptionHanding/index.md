@@ -70,3 +70,113 @@ do you know ?
 - what are the 4 rules for using exception handling with method overriding ?
 
 ```
+
+**Hierarchy of java Exception classes**
+
+```text
+
+the java.lang.Throwable class is the root class of java Exception hierarchy inherited by two subclasses: Exception and Error.
+the hierarchy of java Exception classes is given below:
+
+```
+
+![img.png](../img/img_oct10.png)
+
+**Types of java Exceptions**
+
+```text
+
+there are mainly two types of exceptions: checked and unchecked, an error is considered as the  unchecked exception.
+
+however according to  Oracle, there are three types of exceptions namely:
+
+- checked Exception
+- Unchecked Exception
+- Error
+
+```
+
+![img_1.png](../img/img_1_oct10.png)
+
+**Difference between Checked and Unchecked Exceptions**
+
+1： checked Exception
+
+```text
+
+The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions. 
+For example, IOException, SQLException, etc. Checked exceptions are checked at compile-time.
+
+```
+
+2: Unchecked Exception
+
+```text
+
+The classes that inherit the RuntimeException are known as unchecked exceptions. 
+For example, ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc. 
+Unchecked exceptions are not checked at compile-time, but they are checked at runtime
+
+```
+
+3: Error
+
+```text
+
+Error is irrecoverable. Some example of errors are OutOfMemoryError, VirtualMachineError, AssertionError etc.
+
+```
+
+**java Exception keywords**
+
+Java provides five keywords that are used to handle the exception. The following table describes each.
+
+![img_2.png](../img/img_2_oct10.png)
+
+
+**java try-catch block**
+
+Java try block is used to enclose the code that might throw an exception. It must be used within the method.
+
+If an exception occurs at the particular statement in the try block, the rest of the block code will not execute. 
+So, it is recommended not to keep the code in try block that will not throw an exception.
+
+Java try block must be followed by either catch or finally block.
+
+```text
+
+try{    
+//code that may throw an exception    
+}catch(Exception_class_Name ref){}   
+
+try{    
+//code that may throw an exception    
+}finally{}    
+
+```
+
+**java catch block**
+
+java catch block is used to handle the Exception by declaring the type of exception within the parameter
+
+The declared exception must be the parent class exception ( i.e., Exception) or the generated exception type. 
+However, the good approach is to declare the generated type of exception.
+
+The catch block must be used after the try block only. You can use multiple catch block with a single try block.
+
+**Internal(n: 本质， 内脏) Working of Java try-catch block**
+
+![img_3.png](../img/img_3_oct10.png)
+
+```text
+
+the jvm firstly checks whether the exception is handled or not. if exception is not handled, jvm provides a default
+exception handler that performs the following tasks:
+
+- Prints out exception description
+- Prints the stack trace（hierarchy of methods where the exception occurred）
+- Causes the program to terminate
+
+But if the application programmer handles the exception, the normal flow of the application is maintained, i.e., rest of the code is executed.
+
+```
