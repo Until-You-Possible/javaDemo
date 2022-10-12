@@ -57,3 +57,51 @@ System.out.println((char)i);//will print the character
 - How to compress and uncompress the data of a file?
 
 ```
+
+**OutputStream vs InputStream**
+
+the explanation of OutputStream and InputStream classes are given blow:
+
+***OutputStream***
+
+Java application uses an output stream to write data to a destination; it may be a file, an array, peripheral device or socket.
+
+***InputStream***
+
+```text
+
+Java application uses an input stream to read data from a source; it may be a file, an array, peripheral device or socket.
+
+Let's understand the working of Java OutputStream and InputStream by the figure given below.
+
+
+```
+
+![img.png](../img/img_oct12.png)
+
+**OutputStream class**
+
+```text
+OutputStream class is an abstract class. It is the superclass of all classes representing an output stream of bytes. 
+An output stream accepts output bytes and sends them to some sink.
+
+```
+**Useful methods of OutputStream**
+
+![img_1.png](../img/img_1_oct12.png)
+
+**OutputStream Hierarchy**
+
+![img_2.png](../img/img_2_oct12.png)
+
+**InputStream class**
+
+InputStream class is an abstract class. It is the superclass of all classes representing an input stream of bytes.
+
+**Useful methods**
+
+![img_3.png](../img/img_3_oct12.png)
+
+**InputStream Hierarchy**
+
+![img_4.png](../img/img_4_oct12.png)
